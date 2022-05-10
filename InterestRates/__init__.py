@@ -1,5 +1,5 @@
 import math
-
+from Calculus import NumericalRoots as numroot
 
 def future_value(investment: float,interest_rate: float, years: int, compound_periods_per_year: int) -> float:
     return investment*(1+interest_rate/compound_periods_per_year)**(years*compound_periods_per_year)
@@ -26,7 +26,13 @@ def stated_rate(effective_rate:float,compound_periods_per_year:int) -> float:
 
 
 def stated_rate_continuous(effective_rate:float) -> float:
-    return math.log(effective_rate+1,math.e)
+    return math.log(effective_rate+1, math.e)
+
+
+def get_period_from_rates(stated_annual_rate:float, effective_annual_rate:float):
+    r = numroot.RootFinder(1, 20, 0.01)
+    args = (90, 5)
+    #roots = r.find(f, *args)
 
 if __name__ == '__main__':
     # for i in [1,2,4,6,12,365]:
