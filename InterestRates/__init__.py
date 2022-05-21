@@ -3,6 +3,7 @@ from typing import List
 
 from Calculus import NumericalRoots as numRoot
 
+
 def future_value(investment: float,interest_rate: float, years: int, compound_periods_per_year: int) -> float:
     return investment*(1+interest_rate/compound_periods_per_year)**(years*compound_periods_per_year)
 
