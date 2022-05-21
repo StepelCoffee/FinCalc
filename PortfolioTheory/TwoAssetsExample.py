@@ -7,5 +7,6 @@ if __name__ == '__main__':
     cov = 0.005
 
     pf = tp.TwoAssetPortfolio(weights, risks, returns, tp.cov_to_corr(cov,risks))
+
     print(pf.get_portfolio_return())
     print(pf.get_portfolio_risk())
